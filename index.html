@@ -1,46 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Flick</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLICK - Amplify Your Brand</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
-  <!-- Tambahin 900 biar super bold -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
 
-  <nav>
-    <div class="logo">
-      <img src="logo.png" alt="Flick Logo">
-    </div>
+    <header>
+        <div class="logo">
+            <!-- Placeholder for the hand logo -->
+            <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M30 70C30 70 20 60 25 50C30 40 40 45 40 45L45 30C45 30 50 20 60 25C70 30 65 40 65 40L75 45C75 45 85 50 80 60C75 70 65 65 65 65L60 80C60 80 55 90 45 85C35 80 40 70 40 70L30 70Z" fill="url(#grad1)"/>
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#00C2FF;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#FF00FF;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span>FLICK</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#" class="btn-contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <ul>
-      <li>HOME</li>
-      <li>SERVICE</li>
-      <li>ABOUT US</li>
-      <li><button class="contact">CONTACT</button></li>
-    </ul>
-  </nav>
+    <main class="hero">
+        <h1>Amplify Your Brand<br>Live & Online</h1>
+        <p>We craft data-driven digital marketing strategies that connect your brand with the right audience in real time, every time</p>
+        
+        <div class="cta-group">
+            <a href="#" class="btn btn-primary">Start Your Journey</a>
+            <a href="#" class="btn btn-secondary">Explore Service</a>
+        </div>
+    </main>
 
-  <section class="hero">
-    <div class="content">
-      <h1>
-        Amplify Your Brand<br>
-        Live & Online
-      </h1>
+    <section id="services">
+        <h2>Our Services</h2>
+        <div>
+            <div class="service-card">
+                <h3>Digital Strategy</h3>
+                <p>Tailored plans to grow your brand's presence across all digital platforms.</p>
+            </div>
+            <div class="service-card">
+                <h3>Content Creation</h3>
+                <p>Engaging visuals and copy that resonate with your target audience.</p>
+            </div>
+            <div class="service-card">
+                <h3>Social Media</h3>
+                <p>Managing your community and amplifying your voice on social networks.</p>
+            </div>
+        </div>
+    </section>
 
-      <p>
-        We craft data-driven digital marketing strategies that connect your brand
-        with the right audience in real time, every time
-      </p>
-
-      <div class="btn-group">
-        <button class="btn1">Start Your Journey</button>
-        <button class="btn2">Explore Service</button>
-      </div>
-    </div>
-  </section>
-
+    <footer>
+        <p>&copy; 2026 FLICK Digital Agency. All rights reserved.</p>
+    </footer>
 </body>
 </html>
