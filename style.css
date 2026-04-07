@@ -90,10 +90,10 @@ nav ul li {
 
 /* TITLE */
 .content h1 {
-  font-size: 90px;
-  font-weight: 1100;
+  font-size: 100px;
+  font-weight: 600;
   line-height: 1;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
 
   background: linear-gradient(90deg, #00cfff, #6a6cff, #ff00cc);
   background-clip: text;
