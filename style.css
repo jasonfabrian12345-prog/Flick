@@ -46,7 +46,7 @@ nav {
 }
 
 .logo img {
-  height: 150px;
+  height: 130px;
 }
 
 /* MENU */
@@ -93,7 +93,7 @@ nav ul li {
   font-size: 100px;
   font-weight: 800;
   line-height: 1.05;
-  letter-spacing: -1.5px;
+  letter-spacing: -1px;
 
   background: linear-gradient(90deg, #00cfff, #6a6cff, #ff00cc);
   background-clip: text;
