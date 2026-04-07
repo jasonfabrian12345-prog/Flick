@@ -63,7 +63,7 @@ header {
 }
 
 .logo img {
-    width: 40px;
+    width: 125px;
     margin-bottom: 5px;
 }
 
@@ -146,10 +146,7 @@ nav ul li a:hover {
     background: white;
     position: relative;
     z-index: 1;
-    color: transparent;
-    background-image: var(--primary-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #00C2FF; /* Mengembalikan warna teks ke biru */
     border: 1px solid transparent;
     background-image: linear-gradient(white, white), var(--primary-gradient);
     background-origin: border-box;
