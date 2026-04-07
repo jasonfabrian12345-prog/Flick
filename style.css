@@ -57,14 +57,13 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-weight: 800;
+    font-weight: 600;
     font-size: 22px;
     letter-spacing: 1px;
 }
 
 .logo img {
-    width: 125px;
-    margin-bottom: 10px;
+    width: 130px;
 }
 
 nav ul {
