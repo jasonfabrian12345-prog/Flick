@@ -54,18 +54,6 @@ header {
     width: 100%;
 }
 
-/* Garis gradient: ujung kiri viewport → tengah halaman (50vw) */
-header::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 50vw;
-    height: 3px;
-    bottom: 0;
-    background: var(--primary-gradient);
-    border-radius: 0 999px 999px 0;
-}
-
 .logo {
     display: flex;
     flex-direction: column;
@@ -109,7 +97,7 @@ nav ul li a:hover {
 }
 
 .hero {
-    padding: 80px 8% 100px;
+    padding: 60px 8% 100px;
     max-width: 1200px;
 }
 
@@ -119,8 +107,44 @@ nav ul li a:hover {
     line-height: 1.1;
     margin-bottom: 40px;
     background: var(--primary-gradient);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow:
+        0 0 10px rgba(0, 194, 255, 0.35),
+        0 0 22px rgba(0, 194, 255, 0.28),
+        0 0 46px rgba(255, 0, 255, 0.20);
+    animation: titleGlow 2.6s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+    0% {
+        text-shadow:
+            0 0 10px rgba(0, 194, 255, 0.55),
+            0 0 24px rgba(0, 194, 255, 0.40),
+            0 0 60px rgba(0, 194, 255, 0.22);
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        text-shadow:
+            0 0 12px rgba(255, 0, 255, 0.62),
+            0 0 30px rgba(255, 0, 255, 0.42),
+            0 0 74px rgba(255, 0, 255, 0.22);
+        transform: translateY(-1px) scale(1.008);
+    }
+    100% {
+        text-shadow:
+            0 0 11px rgba(0, 194, 255, 0.58),
+            0 0 26px rgba(0, 194, 255, 0.42),
+            0 0 66px rgba(255, 0, 255, 0.20);
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero h1 {
+        animation: none;
+    }
 }
 
 .hero p {
