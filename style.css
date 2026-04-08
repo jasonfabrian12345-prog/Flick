@@ -59,10 +59,12 @@ header::after {
     content: "";
     position: absolute;
     left: 0;
-    right: 0;
+    width: 50vw;
+    right: auto;
     height: 3px;
     bottom: 0;
     background: var(--primary-gradient);
+    border-radius: 0 999px 999px 0;
 }
 
 .logo {
