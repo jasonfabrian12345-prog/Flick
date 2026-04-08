@@ -54,6 +54,17 @@ header {
     width: 100%;
 }
 
+/* Garis gradient di bawah header */
+header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    bottom: 0;
+    background: var(--primary-gradient);
+}
+
 .logo {
     display: flex;
     flex-direction: column;
@@ -145,6 +156,18 @@ nav ul li a:hover {
     .hero h1 {
         animation: none;
     }
+}
+
+.hero-subtitle-plain {
+    display: block;
+    margin-top: 4px;
+    background: none;
+    background-clip: border-box;
+    -webkit-background-clip: border-box;
+    -webkit-text-fill-color: currentColor;
+    color: #555;
+    text-shadow: none;
+    animation: none;
 }
 
 .hero p {
