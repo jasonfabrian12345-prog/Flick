@@ -295,7 +295,7 @@ nav ul li a:hover {
 
 #services {
     padding: 100px 8%;
-    background: white;
+    background: var(--bg-color);
 }
 
 #services h2 {
@@ -437,4 +437,3 @@ footer {
         transition: none;
     }
 }
-
