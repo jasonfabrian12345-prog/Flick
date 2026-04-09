@@ -84,7 +84,14 @@
             e.preventDefault();
 
             var start = window.scrollY || window.pageYOffset;
-            var end = start + el.getBoundingClientRect().top;
+            var headerPx =
+                parseFloat(
+                    getComputedStyle(document.documentElement).getPropertyValue("--header-height")
+                ) || 0;
+            var end =
+                hash === "#top"
+                    ? 0
+                    : Math.max(0, start + el.getBoundingClientRect().top - headerPx);
             var delta = end - start;
 
             if (reducedMotion()) {
