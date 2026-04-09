@@ -79,9 +79,36 @@
             return 1 - Math.pow(1 - t, 3);
         }
 
+        // On mobile, a swipe can sometimes end on a link and fire a click.
+        // We ignore those "clicks" to prevent accidental jumps while scrolling.
+        var didTouchMove = false;
+        document.addEventListener(
+            "touchstart",
+            function () {
+                didTouchMove = false;
+            },
+            { passive: true }
+        );
+        document.addEventListener(
+            "touchmove",
+            function () {
+                didTouchMove = true;
+            },
+            { passive: true }
+        );
+
         document.addEventListener("click", function (e) {
+            if (didTouchMove) return;
+
             var link = e.target.closest('a[href^="#"]');
             if (!link) return;
+
+            // Only smooth-scroll for our in-page navigation links (header + CTA).
+            // This prevents unexpected behavior from any future "#" links elsewhere.
+            var isNavLink =
+                (link.closest("header") && link.closest("#site-nav")) ||
+                link.closest(".cta-group");
+            if (!isNavLink) return;
 
             var hash = link.getAttribute("href");
             if (!hash || hash === "#") return;
@@ -148,9 +175,16 @@
                     setNavOpen(false);
                 });
             });
+
+            window.addEventListener(
+                "resize",
+                function () {
+                    if (window.innerWidth > 768) setNavOpen(false);
+                },
+                { passive: true }
+            );
         }
     })();
     </script>
 </body>
 </html>
-
