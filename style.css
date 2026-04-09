@@ -3,7 +3,7 @@
     --bg-color: #FAFAFA;
     --text-color: #333;
     --font-family: 'Inter', sans-serif;
-    --header-height: 196px;
+    --header-height: 128px;
 }
 
 html {
@@ -60,7 +60,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 8%;
+    padding: 14px 8%;
     width: 100%;
     background-color: var(--bg-color);
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
@@ -89,9 +89,12 @@ header::after {
 }
 
 .logo img {
-    width: 130px;
+    width: 102px;
+    max-height: 86px;
     height: auto;
-    margin-bottom: 5px;
+    object-fit: contain;
+    margin-bottom: 2px;
+    display: block;
 }
 
 nav ul {
@@ -248,14 +251,14 @@ nav ul li a:hover {
 
 @media (max-width: 768px) {
     :root {
-        --header-height: 172px;
+        --header-height: 120px;
     }
 
     .hero h1 {
         font-size: 48px;
     }
     header {
-        padding: 20px 5%;
+        padding: 12px 5%;
     }
     nav ul {
         display: none; /* Simple mobile hide for now */
@@ -284,4 +287,3 @@ footer {
     text-align: center;
     border-top: 1px solid #eee;
 }
-
