@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FAFAFA">
     <title>FLICK - Amplify Your Brand</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +20,12 @@
             <!-- Placeholder for the hand logo -->
             <img src="logo.png" alt="FLICK Logo">
         </div>
-        <nav>
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Main navigation">
             <ul>
                 <li><a href="#top">Home</a></li>
                 <li><a href="#services">Service</a></li>
@@ -116,6 +122,31 @@
 
             requestAnimationFrame(frame);
         });
+
+        var navToggle = document.querySelector(".nav-toggle");
+        var siteNav = document.getElementById("site-nav");
+        if (navToggle && siteNav) {
+            function setNavOpen(open) {
+                document.body.classList.toggle("nav-open", open);
+                navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+                navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+                document.body.style.overflow = open ? "hidden" : "";
+            }
+
+            navToggle.addEventListener("click", function () {
+                setNavOpen(!document.body.classList.contains("nav-open"));
+            });
+
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape") setNavOpen(false);
+            });
+
+            siteNav.querySelectorAll("a").forEach(function (a) {
+                a.addEventListener("click", function () {
+                    setNavOpen(false);
+                });
+            });
+        }
     })();
     </script>
 </body>
