@@ -8,6 +8,9 @@
 
 html {
     scroll-padding-top: var(--header-height);
+    overflow-x: hidden;
+    overflow-x: clip;
+    max-width: 100%;
 }
 
 * {
@@ -21,9 +24,20 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     overflow-x: hidden;
+    overflow-x: clip;
+    max-width: 100%;
     min-height: 100vh;
     position: relative;
     padding-top: var(--header-height);
+}
+
+/* Keeps decorative blurs from widening the page (fixes sideways cut-off on mobile) */
+.glow-layer {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
 }
 
 /* Background Glows */
@@ -31,7 +45,6 @@ body {
     position: absolute;
     border-radius: 50%;
     filter: blur(80px);
-    z-index: -1;
     opacity: 0.4;
 }
 
@@ -171,6 +184,8 @@ nav ul li a:hover {
 .hero {
     padding: 60px 8% 100px;
     max-width: 1200px;
+    margin-inline: auto;
+    width: 100%;
 }
 
 .hero h1 {
@@ -296,6 +311,9 @@ nav ul li a:hover {
 #services {
     padding: 100px 8%;
     background: var(--bg-color);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 #services h2 {
@@ -306,14 +324,21 @@ nav ul li a:hover {
 
 #services > div {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
     gap: 30px;
+    min-width: 0;
+}
+
+#services > div > * {
+    min-width: 0;
 }
 
 footer {
     padding: 50px 8%;
     text-align: center;
     border-top: 1px solid #eee;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
